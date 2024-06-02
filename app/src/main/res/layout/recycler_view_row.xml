@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_light"
+        android:backgroundTint="@color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/background_light"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/titleTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/lovelo"
+                    android:gravity="center_vertical"
+                    android:text="Dzień"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/dateTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/lovelo"
+                    android:gravity="right"
+                    android:text="Data"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/contentTV"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Wpis w dzienniku"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:foreground="#30000000"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

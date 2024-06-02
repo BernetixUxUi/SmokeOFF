@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:orientation="vertical"
+    tools:context=".SettingActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:fontFamily="@font/lovelo"
+        android:gravity="center"
+        android:text="Ustawienia"
+        android:textColor="@color/black"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/lovelo"
+        android:gravity="center"
+        android:text="Motyw"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="239dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="209dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/lightmode" />
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="33dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:buttonTint="@color/red_basic"
+                android:checked="true"
+                android:textColorLink="@color/red_basic"
+                app:useMaterialThemeColors="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="201dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/darkmode" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="33dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/lovelo"
+        android:gravity="center"
+        android:text="Język aplikacji"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="239dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="209dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/flagpl" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="33dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:buttonTint="@color/red_basic"
+                android:checked="true"
+                android:textColorLink="@color/red_basic"
+                app:useMaterialThemeColors="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="201dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/flagen" />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="33dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
+        android:fontFamily="@font/lovelo"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="goBack"
+        android:text="wróć"
+        app:cornerRadius="50dp" />
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.journal.JournalFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:fontFamily="@font/lovelo"
+        android:gravity="center"
+        android:text="Dziennik"
+        android:textColor="@color/black"
+        android:textSize="40sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/postRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="-130dp"
+        android:layout_marginRight="150dp"
+        android:fontFamily="@font/lovelo"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="+ dodaj"
+        app:cornerRadius="50dp" />
+
+</LinearLayout>

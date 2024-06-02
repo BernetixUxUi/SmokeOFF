@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:statusBarColor">#DEDEDE</item>
+    </style>
+    <style name="BottomNavigationTextStyle">
+        <item name="android:fontFamily">@font/lovelo</item>
+    </style>
+    <style name="BottomNavigationStyle">
+        <item name="android:itemBackground">@drawable/bottom_nav_item_background</item>
+        <item name="itemTextAppearance">@style/BottomNavigationTextStyle</item>
+        <item name="itemIconTint">@color/black</item>
+    </style>
+</resources>

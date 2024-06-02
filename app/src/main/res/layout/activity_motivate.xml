@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:orientation="vertical"
+    tools:context=".MotivateActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:fontFamily="@font/lovelo"
+        android:gravity="center"
+        android:text="Motywacja"
+        android:textColor="@color/black"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/buttonQuot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#FFFFFF"
+        android:drawableTint="#000000"
+        android:fontFamily="@font/lovelo"
+        android:foregroundTint="#000000"
+        android:gravity="center"
+        android:insetLeft="40dp"
+        android:insetTop="0dp"
+        android:insetRight="40dp"
+        android:insetBottom="0dp"
+        android:letterSpacing="0.02"
+        android:text="Cytaty"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:cornerRadius="50dp"
+        android:onClick="goQuote"/>
+
+    <Button
+        android:id="@+id/buttonScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#FFFFFF"
+        android:drawableTint="#000000"
+        android:fontFamily="@font/lovelo"
+        android:foregroundTint="#000000"
+        android:gravity="center"
+        android:insetLeft="40dp"
+        android:insetTop="0dp"
+        android:insetRight="40dp"
+        android:insetBottom="0dp"
+        android:letterSpacing="0.02"
+        android:text="Mój rekord"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:cornerRadius="50dp"
+        android:onClick="goScore"/>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:srcCompat="@drawable/withyou" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="150dp"
+        android:fontFamily="@font/lovelo"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="goBack"
+        android:text="wróć"
+        app:cornerRadius="50dp" />
+</LinearLayout>
