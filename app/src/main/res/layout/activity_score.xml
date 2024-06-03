@@ -123,7 +123,6 @@
         android:fontFamily="@font/lovelo"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        android:onClick="goMotivate"
         android:text="wróć"
         app:cornerRadius="50dp" />
 </LinearLayout>

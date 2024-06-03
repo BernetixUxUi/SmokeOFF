@@ -23,11 +23,11 @@ public class SettingActivity extends AppCompatActivity {
             return insets;
         });
         getSupportActionBar().hide();
+
+        findViewById(R.id.buttonAdd).setOnClickListener(v -> finish());
     }
 
-    public void goBack() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
-    }
+//    public void goBack() {
+//        finish();
+//    }
 }

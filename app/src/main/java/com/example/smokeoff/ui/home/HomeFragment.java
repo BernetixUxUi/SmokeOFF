@@ -27,6 +27,7 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
         binding.buttonSettings.setOnClickListener(v -> {goSettings();});
         binding.buttonMotivation.setOnClickListener(v -> {goMotivation();});
+        binding.buttonReset.setOnClickListener(v -> System.out.println("reset"));
         return root;
     }
 
