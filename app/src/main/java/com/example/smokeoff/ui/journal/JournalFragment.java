@@ -42,7 +42,8 @@ public class JournalFragment extends Fragment {
         RecyclerView recyclerView = binding.postRecyclerView;
         adapter = new PostRecyclerViewAdapter(getContext(), posts);
 
-        posts = ApiMethods.getPostsByUserId("1", adapter);
+
+        posts = ApiMethods.getPostsByUserId(SharedPreferencesManager.getString(getContext(), "DATA", "id", "1"), adapter);
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -57,7 +58,9 @@ public class JournalFragment extends Fragment {
     }
 
     private void getData() {
-        ArrayList<Post> postArrayList = ApiMethods.getPostsByUserId("1", adapter);
+        final String id = SharedPreferencesManager.getString(getContext(), "DATA", "id", "1");
+
+        ArrayList<Post> postArrayList = ApiMethods.getPostsByUserId(id, adapter);
         for (Post p : postArrayList) {
             System.out.println(p.getNote());
         }
@@ -75,12 +78,13 @@ public class JournalFragment extends Fragment {
             if (contentET.getText().toString().trim().isEmpty()) {
                 return;
             }
-            String id = SharedPreferencesManager.getString(getContext(), "DATA", "id", "1");
+            final String id = SharedPreferencesManager.getString(getContext(), "DATA", "id", "1");
             Integer dayWithoutSmoking = Integer.parseInt(SharedPreferencesManager.getString(getContext(), "DATA", "noSmokinkDay", "1"));
             LocalDate date = LocalDate.now();
 
 
             Post newPost = new Post();
+            newPost.setId(null);
             newPost.setUserId(id);
             newPost.setNote(contentET.getText().toString());
             newPost.setDate(date.toString());
