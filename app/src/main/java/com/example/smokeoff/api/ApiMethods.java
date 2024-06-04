@@ -1,6 +1,7 @@
 package com.example.smokeoff.api;
 
 import com.example.smokeoff.model.Post;
+import com.example.smokeoff.ui.journal.PostRecyclerViewAdapter;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -9,18 +10,21 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 public class ApiMethods {
     private static final Retrofit.Builder builder = new Retrofit.Builder()
-            .baseUrl("http://192.168.0.19:8080/api/")
+            .baseUrl("http://192.168.56.1:8080/api/")
             .addConverterFactory(GsonConverterFactory.create());
 
     private static final Retrofit retrofit = builder.build();
 
     private static final ApiService api = retrofit.create(ApiService.class);
 
-    public static ArrayList<Post> getPostsByUserId(String id) {
+    public static ArrayList<Post> getPostsByUserId(String id, PostRecyclerViewAdapter adapter) {
         ArrayList<Post> result = new ArrayList<>();
         Call<ArrayList<Post>> call = api.getAllPosts(id);
 
@@ -29,10 +33,9 @@ public class ApiMethods {
             public void onResponse(Call<ArrayList<Post>> call, Response<ArrayList<Post>> response) {
                 if (response.isSuccessful()) {
                     result.addAll(response.body());
-                    for (Post p : response.body()) {
-                        System.out.println(p);
-                    }
-                    System.out.println("dziala");
+                    adapter.clearData();
+                    adapter.addPosts(result);
+                    adapter.notifyDataSetChanged();
                 }
             }
 
@@ -46,8 +49,7 @@ public class ApiMethods {
         return result;
     }
 
-    public static Post createPost(Post post) {
-        Post result = new Post();
+    public static Post createPost(Post post, PostRecyclerViewAdapter adapter) {
         Call<Post> call = api.createPost(post);
 
         call.enqueue(new Callback<Post>() {
@@ -55,20 +57,19 @@ public class ApiMethods {
             public void onResponse(Call<Post> call, Response<Post> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     Post responseResult = response.body();
-                    responseResult.setId(responseResult.getId());
-                    result.setUserId(responseResult.getUserId());
-                    result.setNoSmokingDay(responseResult.getNoSmokingDay());
-                    result.setDate(responseResult.getDate());
-                    result.setNote(responseResult.getNote());
+                    post.setId(response.body().getId());
+                    ArrayList<Post> res = new ArrayList<>();
+                    res.add(post);
+                    adapter.addPosts(res);
+                    adapter.notifyDataSetChanged();
                 }
             }
 
             @Override
             public void onFailure(Call<Post> call, Throwable t) {
-                //Jakieś info z Toastem
             }
         });
 
-        return result;
+        return post;
     }
 }

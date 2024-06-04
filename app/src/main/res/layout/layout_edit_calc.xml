@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="350dp"
-    android:layout_height="600dp"
+    android:layout_height="400dp"
     android:background="@drawable/corners"
     android:orientation="vertical">
 
@@ -13,14 +13,42 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/lovelo"
         android:gravity="center"
-        android:text="Dodaj wpis"
+        android:text="Cena pojedynczej paczki papierosów"
         android:textColor="@color/black"
-        android:textSize="28sp" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/editTextAverage"
         android:layout_width="288dp"
-        android:layout_height="442dp"
+        android:layout_height="59dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="4"
+        android:shadowRadius="50" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lovelo"
+        android:gravity="center"
+        android:text="Średnia ilość wypalanych paczek dziennie"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextAverage"
+        android:layout_width="282dp"
+        android:layout_height="59dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:background="@color/white"
@@ -44,7 +72,7 @@
         android:insetTop="0dp"
         android:insetRight="70dp"
         android:insetBottom="0dp"
-        android:text="Dodaj"
+        android:text="Zaakceptuj"
         android:textSize="18sp"
         app:cornerRadius="50dp" />
 </LinearLayout>

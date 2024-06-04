@@ -35,7 +35,7 @@
         android:shadowDx="5"
         android:shadowDy="3"
         android:shadowRadius="10"
-        android:text="0"
+        android:text="1"
         android:textColor="@color/red_basic"
         android:textSize="60sp" />
 
@@ -59,7 +59,7 @@
         android:shadowDx="5"
         android:shadowDy="3"
         android:shadowRadius="10"
-        android:text="0"
+        android:text="16"
         android:textColor="@color/red_basic"
         android:textSize="60sp" />
 
@@ -93,27 +93,6 @@
         android:textSize="18sp"
         app:cornerRadius="50dp"
         android:onClick="reset"/>
-
-    <Button
-        android:id="@+id/buttonSettings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#FFFFFF"
-        android:drawableTint="#000000"
-        android:fontFamily="@font/lovelo"
-        android:foregroundTint="#000000"
-        android:gravity="center"
-        android:insetLeft="40dp"
-        android:insetTop="0dp"
-        android:insetRight="40dp"
-        android:insetBottom="0dp"
-        android:letterSpacing="0.02"
-        android:text="Ustawienia"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:cornerRadius="50dp"
-        android:onClick="goSettings"/>
 
     <Button
         android:id="@+id/buttonMotivation"

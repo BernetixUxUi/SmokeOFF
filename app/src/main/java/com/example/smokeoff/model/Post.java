@@ -1,6 +1,5 @@
 package com.example.smokeoff.model;
 
-import java.time.LocalDate;
 
 public class Post {
     private Integer id;
@@ -9,14 +8,14 @@ public class Post {
 
     private Integer noSmokingDay;
 
-    private LocalDate date;
+    private String date;
 
     private String note;
 
     public Post() {
     }
 
-    public Post(Integer id, String userId, Integer noSmokingDay, LocalDate date, String note) {
+    public Post(Integer id, String userId, Integer noSmokingDay, String date, String note) {
         this.id = id;
         this.userId = userId;
         this.noSmokingDay = noSmokingDay;
@@ -48,11 +47,11 @@ public class Post {
         this.noSmokingDay = noSmokingDay;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

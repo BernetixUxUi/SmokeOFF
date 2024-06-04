@@ -37,9 +37,9 @@ public class PostRecyclerViewAdapter extends RecyclerView.Adapter<PostRecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.titleTV.setText(postArrayList.get(position).getNoSmokingDay());
+        holder.titleTV.setText("Day " + postArrayList.get(position).getNoSmokingDay().toString());
         holder.contentTV.setText(postArrayList.get(position).getNote());
-        holder.dateTV.setText(postArrayList.get(position).getDate().toString());
+        holder.dateTV.setText(postArrayList.get(position).getDate());
     }
 
     @Override
@@ -47,16 +47,18 @@ public class PostRecyclerViewAdapter extends RecyclerView.Adapter<PostRecyclerVi
         return postArrayList.size();
     }
 
-//    public ArrayList<Post> getLatestRecipes() {
-//        String userId = SharedPreferencesManager.getString(
-//                context, SharedPreferencesName.AUTH, SharedPreferencesAuthKeys.USER_ID, ""
-//        );
-//
-//        postArrayList.addAll(ApiMethods.getPostsByUserId(userId));
-//        notifyDataSetChanged();
-//
-//        return postArrayList;
-//    }
+    public ArrayList<Post> addPosts(ArrayList<Post> newPosts) {
+        postArrayList.addAll(newPosts);
+        notifyDataSetChanged();
+
+        return postArrayList;
+    }
+
+    public void clearData() {
+        postArrayList.clear();
+        notifyDataSetChanged();
+    }
+
 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

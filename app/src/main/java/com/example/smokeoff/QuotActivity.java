@@ -23,10 +23,7 @@ public class QuotActivity extends AppCompatActivity {
             return insets;
         });
         getSupportActionBar().hide();
-    }
 
-    public void goMotivationn() {
-        Intent intent = new Intent(this, MotivateActivity.class);
-        startActivity(intent);
+        findViewById(R.id.buttonBack).setOnClickListener(v -> finish());
     }
 }
