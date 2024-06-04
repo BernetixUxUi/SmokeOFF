@@ -18,7 +18,7 @@
         android:textSize="28sp" />
 
     <EditText
-        android:id="@+id/editTextAverage"
+        android:id="@+id/editTextTextMultiLine"
         android:layout_width="288dp"
         android:layout_height="442dp"
         android:layout_gravity="center"

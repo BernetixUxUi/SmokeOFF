@@ -71,8 +71,7 @@ public class JournalFragment extends Fragment {
     private void addPost() {
         Dialog dialog = new Dialog(getContext());
         dialog.setContentView(R.layout.layout_add_post);
-
-        EditText contentET = dialog.findViewById(R.id.editTextAverage);
+        EditText contentET = dialog.findViewById(R.id.editTextTextMultiLine);
 
         dialog.findViewById(R.id.button2).setOnClickListener(v -> {
             if (contentET.getText().toString().trim().isEmpty()) {

@@ -24,20 +24,21 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/lovelo"
         android:gravity="center"
-        android:text="Cena 1 paczki"
+        android:text="Cena 1 paczki w zł"
         android:textColor="@color/black"
         android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/lovelo"
-        android:gravity="center"
-        android:text="0 zł"
-        android:textColor="@color/red_basic"
-        android:textSize="30sp" />
+    <EditText
+        android:id="@+id/editTextPrice"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:inputType="numberDecimal"
+        android:paddingLeft="10dp" />
 
     <TextView
         android:id="@+id/textView7"
@@ -50,16 +51,17 @@
         android:textColor="@color/black"
         android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/lovelo"
-        android:gravity="center"
-        android:text="0"
-        android:textColor="@color/red_basic"
-        android:textSize="30sp" />
+    <EditText
+        android:id="@+id/editTextCount"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:inputType="number"
+        android:paddingLeft="10dp" />
 
     <TextView
         android:id="@+id/textView9"
@@ -68,18 +70,18 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/lovelo"
         android:gravity="center"
-        android:text="Zaoszczędzona suma"
+        android:text="Zaoszczędzona suma w zł"
         android:textColor="@color/black"
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textViewResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/lovelo"
         android:gravity="center"
-        android:text="0 zł"
+        android:text="0"
         android:textColor="@color/red_basic"
         android:textSize="30sp" />
 
@@ -95,7 +97,7 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonDoMath"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -104,7 +106,7 @@
         android:insetTop="0dp"
         android:insetRight="70dp"
         android:insetBottom="0dp"
-        android:text="Edytuj dane"
+        android:text="Oblicz"
         android:textSize="18sp"
         app:cornerRadius="50dp" />
 </LinearLayout>
