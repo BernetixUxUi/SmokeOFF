@@ -15,9 +15,12 @@ import com.example.smokeoff.util.SharedPreferencesManager;
 
 import java.security.SecureRandom;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class SplashScreen extends AppCompatActivity {
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +28,17 @@ public class SplashScreen extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_splash_screen);
 
-        final String userID = SharedPreferencesManager.getString(this, "DATA", "id", "1");
+//        SharedPreferencesManager.clear(this, "DATA");
+//        SharedPreferencesManager.saveString(this, "DATA", "start", "04-06-2024 13:30:30");
+//        SharedPreferencesManager.saveString(this, "DATA", "record", "0-0- ");
+        final String userID = SharedPreferencesManager.getString(this, "DATA", "id", "");
         if (userID.isEmpty()) {
             SharedPreferencesManager.saveString(this, "DATA", "id", generateID());
-            System.out.println("Nowy klucz");
-            SharedPreferencesManager.saveString(this, "DATA", "noSmokingDays", "0");
-            DateManager.saveStartDate(this, LocalDate.now());
-        }
 
-        long days = ChronoUnit.DAYS.between(DateManager.getStartDate(this), LocalDate.now());
-        SharedPreferencesManager.saveString(this, "DATA", "noSmokingDays", ""+days);
+            LocalDateTime currentDate = LocalDateTime.now();
+            SharedPreferencesManager.saveString(this, "DATA", "start", currentDate.format(formatter));
+            SharedPreferencesManager.saveString(this, "DATA", "record", "0-0- ");
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

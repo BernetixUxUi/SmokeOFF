@@ -2,6 +2,7 @@
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,7 +10,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class ScoreActivity extends AppCompatActivity {
+import com.example.smokeoff.util.SharedPreferencesManager;
+
+ public class ScoreActivity extends AppCompatActivity {
+    private TextView reasonTV, daysTV, hoursTV, dateTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,23 @@ public class ScoreActivity extends AppCompatActivity {
         });
         getSupportActionBar().hide();
 
+        daysTV = findViewById(R.id.textViewDays);
+        hoursTV = findViewById(R.id.textViewHours);
+        dateTV = findViewById(R.id.textViewDate);
+        reasonTV = findViewById(R.id.textView18);
+
         findViewById(R.id.buttonBack).setOnClickListener(v-> finish());
+
+        setRecordData();
+    }
+
+    private void setRecordData() {
+        String record = SharedPreferencesManager.getString(this, "DATA", "record", " - - ");
+        String reason = SharedPreferencesManager.getString(this, "DATA", "reason", "");
+        String[] recordData = record.split("-");
+        daysTV.setText(recordData[0]);
+        hoursTV.setText(recordData[1]);
+        dateTV.setText(recordData[2]);
+        reasonTV.setText(reason);
     }
 }
